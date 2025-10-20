@@ -220,7 +220,7 @@ function checkPassword(fullname, email, password, confirmPassword) {
       if (confirmPassword == password) {
         confirmPasswordMessage.style.display = "none";
         AddNewUser(fullname, email, password);
-        signUpForm.submit();
+        window.location="../home.html"
       } else {
         confirmPasswordMessage.style.display = "block";
         confirmPasswordMessage.innerHTML =
