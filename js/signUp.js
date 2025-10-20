@@ -175,7 +175,7 @@ function handleSignUp() {
 
 function checkFullname(fullname, email, password, confirmPassword) {
   if (/^[A-Z]/.test(fullname)) {
-    if (/^[a-zA-Z]+$/.test(fullname)) {
+    if (/^[A-Za-z\s]+$/.test(fullname)) {
       if (fullname.length > 2) {
         fullnameMessage.style.display = "none";
         checkEmail(fullname, email, password, confirmPassword);
