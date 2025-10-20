@@ -220,7 +220,7 @@ export function getPostCard(post) {
     ? "#71717A"
     : "#166fe5";
   let showComments = false;
-  postParentComments.style.display = "none";
+  postParentComments.style.display = currentPage=="post.html"?"block":"none";
   postAddCommentBox.addEventListener("click", () => {
     if (currentPage != "post.html") {
       setCurrentPost(post);
