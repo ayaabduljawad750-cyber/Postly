@@ -73,6 +73,7 @@ addPostPage.style.display = "flex";
 addPostPage.style.height = "80vh";
 addPostPage.style.justifyContent = "center";
 addPostPage.style.alignItems = "center";
+addPostPage.style.padding="25px 25px"
 
 addPostForm.style.width = "800px";
 // addPostForm.style.height="80%"

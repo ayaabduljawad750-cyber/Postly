@@ -6,9 +6,9 @@ import {
   setCurrentUser,
 } from "./main.js";
 
-let signInPage = document.getElementById("signUpPage");
+let signUpPage = document.getElementById("signUpPage");
 
-let signInForm = document.createElement("form");
+let signUpForm = document.createElement("form");
 let signUpBox = document.createElement("div");
 let signUpTitle = document.createElement("h3");
 
@@ -36,7 +36,7 @@ let questionLink = document.createElement("a");
 
 // Add Data
 
-signInForm.action = "./home.html";
+signUpForm.action = "./home.html";
 
 signUpTitle.innerHTML = "Sign Up";
 
@@ -91,24 +91,24 @@ signUpBox.appendChild(confirmPasswordBox);
 question.appendChild(questionText);
 question.appendChild(questionLink);
 
-signInForm.appendChild(signUpBox);
-signInForm.appendChild(signUpButton);
-signInForm.appendChild(question);
+signUpForm.appendChild(signUpBox);
+signUpForm.appendChild(signUpButton);
+signUpForm.appendChild(question);
 
-signInPage.appendChild(signInForm);
+signUpPage.appendChild(signUpForm);
 
 // Add style
 
-signInPage.style.display = "flex";
-signInPage.style.flexDirection = "column";
-signInPage.style.height = "80vh";
-signInPage.style.justifyContent = "center";
-signInPage.style.alignItems = "center";
+signUpPage.style.display = "flex";
+signUpPage.style.flexDirection = "column";
+signUpPage.style.height = "80vh";
+signUpPage.style.justifyContent = "center";
+signUpPage.style.alignItems = "center";
 
-signInForm.style.width = "30%";
-signInForm.style.backgroundColor = "white";
-signInForm.style.padding = "25px 25px";
-signInForm.style.borderRadius = "25px";
+signUpForm.style.width = "30%";
+signUpForm.style.backgroundColor = "white";
+signUpForm.style.padding = "25px 25px";
+signUpForm.style.borderRadius = "25px";
 
 signUpTitle.style.textAlign = "center";
 signUpTitle.style.marginBottom = "25px";
@@ -160,7 +160,7 @@ questionText.style.marginBottom = "10px";
 
 questionLink.style.textDecoration = "none";
 
-signInForm.addEventListener("submit", function (e) {
+signUpForm.addEventListener("submit", function (e) {
   e.preventDefault();
   handleSignUp();
 });
@@ -220,7 +220,7 @@ function checkPassword(fullname, email, password, confirmPassword) {
       if (confirmPassword == password) {
         confirmPasswordMessage.style.display = "none";
         AddNewUser(fullname, email, password);
-        signInForm.submit();
+        signUpForm.submit();
       } else {
         confirmPasswordMessage.style.display = "block";
         confirmPasswordMessage.innerHTML =
@@ -249,3 +249,19 @@ function AddNewUser(fullname, email, password) {
   setCurrentUser(newUser);
   setUsers(users);
 }
+
+
+
+const mediaQuery = window.matchMedia("(max-width: 900px)");
+
+function handleScreenChange(e) {
+  if (e.matches) {
+    signUpForm.style.width = "80%";
+  } else {
+    signUpForm.style.width = "650px";
+  }
+}
+
+mediaQuery.addEventListener("change", handleScreenChange);
+
+handleScreenChange(mediaQuery);

@@ -47,6 +47,7 @@ emptyBoxPosts.id = "emptyMessageProfile";
 boxPosts.appendChild(emptyBoxPosts);
 
 let AllPosts = getPosts();
+console.log(AllPosts)
 if(AllPosts.length==0){
 emptyBoxPosts.style.display = "block";
 }

@@ -204,9 +204,9 @@ export function getPostCard(post) {
     postAddLikeIcon.style.color = isLikeIt(post.id) ? "#dc3545" : "#000";
     postCard.style.display =
       currentPage == "favorites.html" && !isLikeIt(post.id) ? "none" : "block";
-        if(currentPage=="favorites.html"&&getFavoritePosts().length==0){
-            document.getElementById("emptyMessageProfile").style.display="block"
-          }
+    if (currentPage == "favorites.html" && getFavoritePosts().length == 0) {
+      document.getElementById("emptyMessageProfile").style.display = "block";
+    }
   });
 
   for (let comment of post.comments) {

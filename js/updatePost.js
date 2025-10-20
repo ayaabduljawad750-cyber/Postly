@@ -78,6 +78,7 @@ updatePostPage.style.flexDirection = "column";
 updatePostPage.style.height = "80vh";
 updatePostPage.style.justifyContent = "center";
 updatePostPage.style.alignItems = "center";
+updatePostPage.style.padding="25px 25px"
 
 updatePostForm.style.width = "800px";
 // addPostForm.style.height="80%"

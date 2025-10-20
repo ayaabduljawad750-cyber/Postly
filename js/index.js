@@ -93,10 +93,7 @@ for (let input of [emailInput, passwordInput]) {
   input.style.border = "0.5px solid #00000030";
 }
 
-for (let message of [
-  emailMessage,
-  passwordMessage
-]) {
+for (let message of [emailMessage, passwordMessage]) {
   message.style.color = "#dc3545";
   message.style.fontSize = "12px";
   message.style.padding = "0px 5px";
@@ -123,9 +120,12 @@ questionLink.style.textDecoration = "none";
 
 // Logic
 
-signInForm.addEventListener("submit", function(e){checkSignIn(e)});
+signInForm.addEventListener("submit", function (e) {
+  checkSignIn(e);
+});
 
 function checkSignIn(e) {
+  e.preventDefault();
   let email = emailInput.value;
   let password = passwordInput.value;
   let users = getUsers();
@@ -143,14 +143,27 @@ function checkSignIn(e) {
     if (password == currentUser.password) {
       passwordMessage.style.display = "none";
       setCurrentUser(currentUser);
+      window.location="../home.html"
     } else {
-      e.preventDefault();
-      passwordMessage.style.display="block"
+      passwordMessage.style.display = "block";
       passwordMessage.innerHTML = "Invalid Password";
     }
   } else {
-    e.preventDefault();
-    emailMessage.style.display="block"
+    emailMessage.style.display = "block";
     emailMessage.innerHTML = "Invalid Email";
   }
 }
+
+const mediaQuery = window.matchMedia("(max-width: 900px)");
+
+function handleScreenChange(e) {
+  if (e.matches) {
+    signInForm.style.width = "80%";
+  } else {
+    signInForm.style.width = "650px";
+  }
+}
+
+mediaQuery.addEventListener("change", handleScreenChange);
+
+handleScreenChange(mediaQuery);
