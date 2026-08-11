@@ -63,7 +63,7 @@ addPostForm.appendChild(addPostBoxMessage);
 addPostForm.appendChild(addPostBox);
 addPostForm.appendChild(addPostButton);
 
-addPostForm.action="../home.html"
+addPostForm.action="./index.html"
 
 addPostPage.appendChild(addPostForm);
 

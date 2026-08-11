@@ -36,9 +36,9 @@ export function getAddPostIcon() {
   // event click
   boxAddPostIcon.addEventListener("click", () => {
     if (isSignIn()) {
-      window.location.href = "../addPost.html";
+      window.location.href = "./addPost.html";
     } else {
-      window.location.href = "../signIn.html";
+      window.location.href = "./signIn.html";
     }
   });
 

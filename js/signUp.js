@@ -36,7 +36,7 @@ let questionLink = document.createElement("a");
 
 // Add Data
 
-signUpForm.action = "./home.html";
+signUpForm.action = "./index.html";
 
 signUpTitle.innerHTML = "Sign Up";
 
