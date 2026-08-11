@@ -224,7 +224,7 @@ export function getPostCard(post) {
   postAddCommentBox.addEventListener("click", () => {
     if (currentPage != "post.html") {
       setCurrentPost(post);
-      window.location.href = "../post.html";
+      window.location.href = "./post.html";
     } else {
       showComments = !showComments;
       postParentComments.style.display = showComments ? "block" : "none";
