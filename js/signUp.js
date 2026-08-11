@@ -36,7 +36,7 @@ let questionLink = document.createElement("a");
 
 // Add Data
 
-signUpForm.action = "./index.html";
+signUpForm.action = "./";
 
 signUpTitle.innerHTML = "Sign Up";
 
@@ -220,7 +220,7 @@ function checkPassword(fullname, email, password, confirmPassword) {
       if (confirmPassword == password) {
         confirmPasswordMessage.style.display = "none";
         AddNewUser(fullname, email, password);
-        window.location="./index.html"
+        window.location="./"
       } else {
         confirmPasswordMessage.style.display = "block";
         confirmPasswordMessage.innerHTML =

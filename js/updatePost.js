@@ -181,7 +181,7 @@ updatePostButton.disabled = title && details ? false : true;
 updatePostForm.addEventListener("submit", (e) => {
   e.preventDefault()
   updatePost(post.id,title,imgURL,details)
-  window.location.href="../profile.html"
+  window.location.href="./profile.html"
 });
 
 

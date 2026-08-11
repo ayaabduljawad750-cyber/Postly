@@ -31,7 +31,7 @@ let profileIcon = document.createElement("i");
 let signOutIcon = document.createElement("i");
 
 brand.innerHTML = "Postly";
-brand.href = "./index.html";
+brand.href = "./";
 iconMenu.classList.add("fa-solid", "fa-bars");
 
 boxLeft.appendChild(brand);
@@ -98,7 +98,7 @@ for (let item of [homeItem, favoritesItem, profileItem, signOutItem]) {
   }
 }
 let linksHref = [
-  "./index.html",
+  "./",
   isLogin ? "./favorites.html" : "./signIn.html",
   isLogin ? "./profile.html" : "./signIn.html",
   isLogin ? "#" : "./signIn.html",
@@ -148,7 +148,7 @@ if (isLogin) {
 
     sessionStorage.removeItem("currentUser");
 
-    window.location.href = "./index.html";
+    window.location.href = "./";
   });
 }
 
