@@ -1,6 +1,8 @@
+import { isSignIn } from "./main.js";
+
 export function getAddPostIcon() {
-  let boxAddPostIcon = document.createElement("div")
-let iconAddPost = document.createElement("i")
+  let boxAddPostIcon = document.createElement("div");
+  let iconAddPost = document.createElement("i");
   // start Icon Add post
   iconAddPost.classList.add("fa-solid", "fa-share-nodes");
   boxAddPostIcon.appendChild(iconAddPost);
@@ -15,7 +17,7 @@ let iconAddPost = document.createElement("i")
   boxAddPostIcon.style.padding = "25px";
   boxAddPostIcon.style.borderRadius = "50%";
   boxAddPostIcon.style.transition = "all 0.4s ease";
-  boxAddPostIcon.style.zIndex=1000
+  boxAddPostIcon.style.zIndex = 1000;
 
   iconAddPost.style.fontSize = "30px";
 
@@ -31,10 +33,14 @@ let iconAddPost = document.createElement("i")
 
   // end Icon Add post
 
-  // event click 
-  boxAddPostIcon.addEventListener("click",()=>{
-    window.location.href="../addPost.html"
-  })
+  // event click
+  boxAddPostIcon.addEventListener("click", () => {
+    if (isSignIn()) {
+      window.location.href = "../addPost.html";
+    } else {
+      window.location.href = "../signIn.html";
+    }
+  });
 
-  return boxAddPostIcon
+  return boxAddPostIcon;
 }

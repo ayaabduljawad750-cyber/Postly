@@ -22,7 +22,7 @@ let questionLink = document.createElement("a");
 
 // Add Data
 
-signInForm.action = "./home.html";
+signInForm.action = "./index.html";
 
 signInTitle.innerHTML = "Sign In";
 
@@ -143,7 +143,7 @@ function checkSignIn(e) {
     if (password == currentUser.password) {
       passwordMessage.style.display = "none";
       setCurrentUser(currentUser);
-      window.location="../home.html"
+      window.location="../index.html"
     } else {
       passwordMessage.style.display = "block";
       passwordMessage.innerHTML = "Invalid Password";

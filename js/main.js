@@ -3,12 +3,12 @@ export function generateId() {
 }
 
 export function getUsers() {
-  let users = JSON.parse(localStorage.getItem("usersPostly")) || [];
+  let users = JSON.parse(localStorage.getItem("users")) || [];
   return users;
 }
 
 export function setUsers(users) {
-  localStorage.setItem("usersPostly", JSON.stringify(users));
+  localStorage.setItem("users", JSON.stringify(users));
 }
 
 export function isEmailExists(email) {
@@ -27,21 +27,24 @@ export function getUserById(userId) {
 }
 
 export function setCurrentUser(currentUser) {
-  sessionStorage.setItem("currentUserPostly", JSON.stringify(currentUser));
+  sessionStorage.setItem("currentUser", JSON.stringify(currentUser));
 }
 
 export function getCurrentUser() {
-  let currentUser =
-    JSON.parse(sessionStorage.getItem("currentUserPostly")) || {};
+  let currentUser = JSON.parse(sessionStorage.getItem("currentUser")) || null;
   return currentUser;
 }
 
+export function isSignIn() {
+  return getCurrentUser() != null;
+}
+
 export function setPosts(posts) {
-  localStorage.setItem("postsPostly", JSON.stringify(posts));
+  localStorage.setItem("posts", JSON.stringify(posts));
 }
 
 export function getPosts() {
-  let posts = JSON.parse(localStorage.getItem("postsPostly")) || [];
+  let posts = JSON.parse(localStorage.getItem("posts")) || [];
   return posts;
 }
 
@@ -82,7 +85,7 @@ export function addLikeFunction(postId) {
   let isThere = isLikeIt(postId);
   if (isThere) {
     currentUser.favorites = currentUser.favorites.filter(
-      (favId) => favId != postId
+      (favId) => favId != postId,
     );
   } else {
     currentUser.favorites.push(postId);
@@ -100,6 +103,9 @@ export function addLikeFunction(postId) {
 
 export function isLikeIt(postId) {
   let currentUser = getCurrentUser();
+  if (!currentUser) {
+    return false;
+  }
   let isThere = false;
   for (let favId of currentUser.favorites) {
     if (favId == postId) {
@@ -155,7 +161,7 @@ export function deletePostById(postId) {
 
   let currentUser = getCurrentUser();
   currentUser.favorites = currentUser.favorites.filter(
-    (favId) => favId != postId
+    (favId) => favId != postId,
   );
   setCurrentUser(currentUser);
 
@@ -165,11 +171,11 @@ export function deletePostById(postId) {
 }
 
 export function setCurrentPost(post) {
-  sessionStorage.setItem("currentPostPostly", JSON.stringify(post));
+  sessionStorage.setItem("currentPost", JSON.stringify(post));
 }
 
 export function getCurrentPost() {
-  let post = JSON.parse(sessionStorage.getItem("currentPostPostly")) || {};
+  let post = JSON.parse(sessionStorage.getItem("currentPost")) || {};
   return post;
 }
 
@@ -178,7 +184,7 @@ export function updatePost(postId, postTitle, imgURL, postDetails) {
   posts = posts.map((post) => {
     if (post.id == postId) {
       post.title = postTitle;
-      (post.imgURL = imgURL), (post.details = postDetails);
+      ((post.imgURL = imgURL), (post.details = postDetails));
       post.createdDate = getDate();
     }
     return post;
