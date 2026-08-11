@@ -174,7 +174,7 @@ addPostButton.disabled = title && details ? false : true;
 addPostForm.addEventListener("submit", (e) => {
   e.preventDefault()
   addNewPost(title,imgURL,details)
-  window.history.back();
+  window.location.href = "./";
 });
 
   const mediaQuery = window.matchMedia("(max-width: 1000px)");
