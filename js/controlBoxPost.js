@@ -60,7 +60,7 @@ deleteIcon.addEventListener("click",()=>{
 updateIcon.addEventListener("click",()=>{
   let post = getPostById(postId)
   setCurrentPost(post)
-  window.location.href="../updatePost.html"
+  window.location.href="./updatePost.html"
   
 })
 
