@@ -2,7 +2,7 @@
 
 A lightweight, client-side-only social sharing app for sharing moments. Users can sign up, publish posts, like their favorites, and leave comments — all powered by vanilla JavaScript and persisted in the browser.
 
-![Postly home page](screenshots/home.png)
+![Postly home page](screenshots/home.PNG)
 
 ## Overview
 
@@ -18,7 +18,7 @@ Postly is a front-end-only platform that lets you share posts with images and te
 - **Responsive design** — Mobile hamburger menu and layouts that adapt to any screen size
 - **Local persistence** — Data is stored in `localStorage` / `sessionStorage`, so your posts survive page reloads
 
-![Post detail and comments](screenshots/post-detail.png)
+![Post detail and comments](screenshots/post-detail.PNG)
 
 ## Demo Account
 
