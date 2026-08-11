@@ -161,7 +161,7 @@ iconMenu.addEventListener("click", () => {
 });
 
 window.addEventListener("scroll", () => {
-  if (window.scrollY > 200) {
+  if (window.scrollY > 500) {
     header.style.position = "fixed";
     header.style.top = "0";
     header.style.left = "0";

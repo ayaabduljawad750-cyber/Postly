@@ -1,3 +1,46 @@
+const initialPosts = [
+    {
+      id: 0,
+      authorId: 0,
+      comments: [],
+      createdDate: getDate(),
+      title: "JavaScript",
+      details:
+        "JavaScript is more than just a programming language — it’s a key tool for building interactive and dynamic web applications.",
+      imgURL:
+        "https://cdn.pixabay.com/photo/2015/04/23/17/41/javascript-736400_1280.png",
+    },
+    {
+      id: 1,
+      authorId: 0,
+      comments: [],
+      createdDate: getDate(),
+      title: "CSS",
+      details:
+        "CSS is what turns a simple webpage into a beautiful and responsive user interface.",
+      imgURL:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsbjSCasUfrH1r_QsnRTjbvh167_4GxVRHebi3C7TZnQVQmWlGEvzB4ic&s=10",
+    },
+    {
+      id: 2,
+      authorId: 0,
+      comments: [],
+      createdDate: getDate(),
+      title: "HTML",
+      details:
+        "HTML is the foundation of every website. It helps structure content and gives a webpage its basic meaning and organization.",
+      imgURL:
+        "https://pixelmechanics.com.sg/wp-content/uploads/2019/06/html5-logo-for-web-development.png",
+    },
+  ]
+
+const initialUsers = [{
+  id:0,
+  email:"postly@gmail.com",
+  favorites:[],
+  fullname:"Postly",
+  password:"postly"
+}]
 export function generateId() {
   return Date.now();
 }
@@ -45,6 +88,11 @@ export function setPosts(posts) {
 
 export function getPosts() {
   let posts = JSON.parse(localStorage.getItem("posts")) || [];
+  if(posts.length==0){
+    setUsers(initialUsers)
+    setPosts(initialPosts)
+    posts=initialPosts
+  }
   return posts;
 }
 
