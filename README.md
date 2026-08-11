@@ -121,11 +121,7 @@ Since the project is 100% static, hosting is easy.
 2. Go to **Settings → Pages**.
 3. Under **Build and deployment**, select `Deploy from a branch`, choose `main` / root, and save.
 
-**Netlify**
-
-1. Go to [app.netlify.com/drop](https://app.netlify.com/drop).
-2. Drag and drop the project folder.
-3. Your site is live at the generated URL.
+Go to [app.github.com/drop](https://ayaabduljawad750-cyber.github.io/Postly/).
 
 ## Roadmap & Limitations
 
@@ -133,6 +129,3 @@ Since the project is 100% static, hosting is easy.
 - Data is tied to the browser that created it; clearing storage resets the app.
 - Future ideas: real backend + database, image upload instead of URL-only, server-side auth.
 
-## License
-
-MIT
